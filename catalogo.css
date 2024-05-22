@@ -1,0 +1,798 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/*
+font-family: "Poppins", sans-serif;
+font-family: "Oswald", sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: "Poppins", sans-serif
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {    
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/*header start*/
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 45px 0;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo {
+    width: 100px;
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+    text-transform: uppercase;
+}
+
+.menu .navbar ul li a{
+    font-size: 15px;
+    padding: 20px;
+    color: black;
+    display: block;
+}
+
+/* efect navbar start */
+
+.menu .navbar ul li::after{
+    /*edit*/
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 3px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    /*edit*/
+}
+
+.menu .navbar ul li:hover::after{
+    transform: scaleX(1);
+}
+
+.menu .navbar .btnLogin-popup {
+    text-transform: uppercase;
+    width: 100px;
+    height: 63px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .5s;
+}
+/* efect navbar finish */
+
+#menu {
+    display: none;
+}
+
+.menu-icon {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+
+#img-carrito {
+    width: 40px;
+}
+
+.submenu {
+    position: relative;
+    
+}
+
+.submenu #carrito {
+    display: none;
+}
+
+.submenu:hover #carrito {
+    display: block;
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(10px);
+    top: 100%;
+    z-index: 1;
+    background-color: #4e4b5076;
+    padding: 20px;
+    min-width: 400px;   
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    color: white;
+}
+
+.borrar {
+    background-color: #11111111;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: 800;
+    cursor: pointer;
+
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 0 200px;
+}
+
+/*header end*/
+
+/*login css*/
+
+.wrapper {
+    text-align: center;
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform .5s ease,height .2s ease;
+    /*edit*/
+    position: fixed;
+    z-index: 100; /* Por encima de otros elementos */
+    left: 50%; /* Centrar horizontalmente */
+    top: 50%; /* Centrar verticalmente */
+    transform: translate(-50%, -50%); /* Centrar exactamente */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    backdrop-filter: blur(5px); /* Efecto de degradado borroso */
+    display: none;
+
+}
+
+.wrapper.active{
+    height: 520px;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translate(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+
+/*css of register*/
+
+.register .input-box {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid #181818;
+    margin: 0px 0 8px 0;
+}
+
+.register .input-box label {
+    position: absolute;
+    top: 60%;
+    left: 5px;
+    color: #dcdccd;
+    font-size: 1rem;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.register .input-box input:focus ~ label,
+.register .input-box input:valid ~ label {
+    top: 15px;
+}
+
+
+.register .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #181818;
+    padding: 40px 3px 0 3px;
+}
+
+.register .input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    line-height: 120px
+}
+
+.register .remember-forgot {
+    font-size: .9rem;
+    color: #181818;
+    font-weight: 400;
+    margin: -5px 0px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.register .remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.register .remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.register .remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.register .btn {
+    width: 80%;
+    height: 35px;
+    color: white;
+    background: black;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.register .login-register {
+    font-size: .9rem;
+    color: black;
+    margin: 10px 0 10px;
+}
+
+.register .login-register p a {
+    color: black;
+    text-decoration: none;
+
+}
+
+.register .login-register p a:hover {
+    text-decoration: underline;
+}
+
+/*css of login*/
+
+
+.login .input-box {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid #181818;
+    margin: 20px 0;
+}
+
+.login .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #dcdccd;
+    font-size: 1rem;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.login .input-box input:focus ~ label,
+.login .input-box input:valid ~ label {
+    top: 15px;
+}
+
+
+.login .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #181818;
+    padding: 40px 3px 0 3px;
+}
+
+.login .input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    line-height: 120px
+}
+
+.login .remember-forgot {
+    font-size: .9rem;
+    color: #181818;
+    font-weight: 400;
+    margin: 5px 0px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login .remember-forgot label input {
+    accent-color: black;
+    margin-right: 3px;
+}
+
+.login .remember-forgot a {
+    color: black;
+    text-decoration: none;
+}
+
+.login .remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login .btn {
+    width: 80%;
+    height: 35px;
+    color: white;
+    background: black;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.login .login-register {
+    font-size: .9rem;
+    color: black;
+    margin: 25px 0 10px;
+}
+
+.login .login-register p a {
+    color: black;
+    text-decoration: none;
+
+}
+
+.login .login-register p a:hover {
+    text-decoration: underline;
+}
+
+/*login css finish*/
+
+.btn-2 {
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn-2:active {
+    background-color: #ffffff;
+    color: #181818;
+    transition: .2s;
+}
+
+/*products start*/
+
+.products  {
+    padding:10px 0;
+    text-align: center;
+}
+
+.products h2 {
+    color: black;
+    font-family: "Oswald", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product {
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 0 10px rgb(207, 203, 203);
+    border-radius: 10%;
+    background-color: #f5f5f5;
+}
+
+.product img {
+    width: 230px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    font-size: 20px;
+    color: black;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+}
+
+.product p, .precio {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.precio {
+    font-weight: 800;
+}
+
+.btn-info{
+    background: transparent;
+    color: #181818;
+    padding: 5px;
+    border: none;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.btn-info:hover{
+    text-decoration: underline;
+}
+
+/*products end*/
+
+/*----------------------------------------------*/
+
+/* footer start */
+.footer {
+    text-align: start;
+    padding: 20px 50px 20px 50px;
+    background-color: black;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    padding: 10px 50px 0px 50px;
+}
+
+.link h3 {
+    font-size: 18px;
+    color: white;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-decoration: underline 2px;
+}
+
+.link a {
+    font-size: 18px;
+    color: #dcdccd;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.link li{
+    font-size: 18px;
+    color: #dcdccd;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mapa {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+}
+/* footer finish */
+
+/*responsive start*/
+
+@media (max-width:991px) {
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #181818;
+        display: none;
+    }
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    .menu .navbar ul li a {
+        color: white;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+        display: block;
+        position: absolute;
+        right: 0;
+        backdrop-filter: blur(10px);
+        top: 100%;
+        z-index: 1;
+        background-color: #4e4b5076;
+        padding: 20px;
+        min-width: 400px;  
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .submenu:hover #carrito {
+        min-width: 100%;
+    }
+
+    .header {
+        min-width: 0vh;
+    }
+
+    .header-img {
+        width: 300px;
+    }
+
+    .header-content {
+        padding: 50px 0;
+        flex-direction: column;
+    }
+
+    .header-txt {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .header-txt h1 {
+        font-size: 70px;
+    }
+
+    .ofert {
+        padding: 30px 30px 0 30px;
+        flex-direction: column;
+    }
+
+    .ofert-1 {
+        margin-bottom: 30px;
+    }
+
+    .products {
+        padding: 0 30px 30px 30px;
+    }
+
+    .products h2 {
+        margin-bottom: 30px;
+    }
+
+    .product-content {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .product img {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* footer start */
+    .footer {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .link {
+        padding: 10px 10px 0px 10px;
+    }
+
+    .link h3 {
+        font-size: 12px;
+        color: white;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-decoration: underline 2px;
+    }
+
+    .link a {
+        font-size: 12px;
+        color: #dcdccd;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .link li{
+        font-size: 12px;
+        color: #dcdccd;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .mapa {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+    }
+    /* footer finish */
+}
+
+@media (max-width:600px) {
+    /* footer start */
+    .footer {
+        text-align: start;
+        padding: 20px 10px 20px 10px;
+        background-color: black;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .link {
+        padding: 10px 10px 0px 10px;
+    }
+
+    .link h3 {
+        font-size: 10px;
+        color: white;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-decoration: underline 2px;
+    }
+
+    .link a {
+        font-size: 9px;
+        color: #dcdccd;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .link li{
+        font-size: 9px;
+        color: #dcdccd;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .mapa {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+    }
+    /* footer finish */
+}
+
+
+
+/*responsive end*/
+
+/*scroll animation start*/
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+.product {
+    view-timeline-name: --products;
+    view-timeline-axis: block;
+
+    animation-timeline: --products;
+    animation-name: show;
+
+    animation-range: entry 25% cover 55%;
+    animation-fill-mode: both;
+
+}
+
+/*scoll animation finish*/
+
+/*img style*/
+
+.product img {
+    filter: drop-shadow(10px 7px 10px grey);
+}
+
+/*img style finish*/

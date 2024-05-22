@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cinna store</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="icon" href="../img/navbar/logo-cinna.png">
+    
+</head>
+<body>
+    <!-- navbar start -->
+    <header class="header"><!-- navbar -->
+        <div class="menu container">
+            <a href="../index.html" class="logo"><img src="../img/navbar/logo-cinna.png" alt="logo"></a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="../img/navbar/nav-icon.png" class="menu-icon" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../catalogo.html">catalogo</a></li>
+                    <li><button class="btnLogin-popup">login</button></li>
+                </ul>
+            </nav>
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="../img/navbar/carrito-compras.png" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>imagen</th>
+                                        <th>nombre</th>
+                                        <th>precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2">vaciar</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- navbar finish -->
+
+    <!--login start-->
+    <div class="wrapper container"> <!-- login -->
+        <!--icono de cerrar start -->
+        <span class="icon-close">
+            <ion-icon name="close-circle"></ion-icon>
+        </span>
+        <!--login start-->
+        <div class="form-box login">
+            <!--titulo-->
+            <h2>Login</h2>
+            <form action="#">
+                <!--input de mail-->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email-login" id="email-login" required>
+                    <label for="email-login">Correo electrónico</label>
+                </div>
+                <!--input de contraseña-->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password-login" id="password-login" required>
+                    <label for="password-login">Contraseña</label>
+                </div>
+                <!--recordar y olvido su contraseña-->
+                <div class="remember-forgot">
+                    <label for="checkbox-recordar"><input type="checkbox" id="checkbox-recordar">Recordar</label>
+                    <a href="#">¿Olvido su Contraseña?</a>
+                </div>
+                <!--boton de iniciar sesion-->
+                <button type="submit" class="btn">Iniciar Sesion</button>
+                <!-- envio a pagina de registro -->
+                <div class="login-register">
+                    <p>¿No tienes cuenta?<a href="#" class="register-link">Registrarse</a></p>
+                </div>
+            </form>
+        </div>
+        <!-- register -->
+        <div class="form-box register">
+            <!-- titulo -->
+            <h2>Registrarse</h2>
+            <form action="#">
+                <!--  usuer -->
+                <div class="input-box">
+                    <!-- icon user -->
+                    <span class="icon">
+                        <ion-icon name="person-circle"></ion-icon>
+                    </span>
+                    <!-- input user -->
+                    <input type="text" name="txt-register" id="txt-register" required>
+                    <label for="txt-register">Usuario</label>
+                </div>
+                <!-- correo -->
+                <div class="input-box">
+                    <!-- icon -->
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <!-- input correo -->
+                    <input type="email" name="email-register" id="email-register" required>
+                    <label for="email-register">Correo</label>
+                </div>
+                <!-- password -->
+                <div class="input-box">
+                    <!-- icon -->
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <!-- input password -->
+                    <input type="password" name="password-register" id="password-register" required>
+                    <label for="password-register">Contraseña</label>
+                </div>
+                <!-- remember forgot -->
+                <div class="remember-forgot">
+                    <label for="checkbox-terminosycondiciones"><input type="checkbox" id="checkbox-terminosycondiciones">Acepto los <a href="#">terminos & condiciones</a></label>                </div>
+                <!-- btn register -->
+                <button type="submit" class="btn">Registrarse</button>
+                <!-- I have user -->
+                <div class="login-register">
+                    <p>¿Tienes una cuenta?<a href="#" class="login-link">Iniciar sesion</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--login finish-->
+
+    <main id="lista-1">
+        <!-- product start -->
+        <div class="product container">
+            <img src="../img/productos/product-2.png" alt="producto" class="main-img">
+            <div class="main-description">
+                <h3>Producto 1</h3>
+                <p>Lorem ipsum dolor sit.</p>
+                <h4 class="precio">Ahora: $19.990 <h4 class="precio-antes">Antes: $25.990</h4></h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem debitis porro minima sequi quam nihil.</p>
+                <a href="#" class="agregar-carrito btn-2" data-id="1">agregar al carrito</a>
+            </div>
+        </div>
+        <!-- product finish -->
+        <h2 class="similar-products">Productos Similares</h2><!-- titulo productos similares -->
+        <!-- oferts start -->
+        <section class="ofert container">
+            <div class="ofert-1">
+                <div class="ofert-img">
+                    <img src="../img/productos/product-1.png" alt="">
+                </div>
+                <div class="ofert-txt">
+                    <h3>Peluche Cinnamoroll</h3>
+                    <h4 class="precio">$25.990</h4>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+                <div class="ofert-img">
+                    <img src="../img/productos/product-2.png" alt="">
+                </div>
+                <div class="ofert-txt">
+                    <h3>Peluche Cinnamoroll</h3>
+                    <h4 class="precio">$25.990</h4>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">agregar al carrito</a>
+                </div>
+            </div>
+
+            <div class="ofert-1">
+                <div class="ofert-img">
+                    <img src="../img/productos/product-3.png" alt="">
+                </div>
+                <div class="ofert-txt">
+                    <h3>Peluche Cinnamoroll</h3>
+                    <h4 class="precio">$25.990</h4>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">agregar al carrito</a>
+                </div>
+            </div>
+        </section>
+        <!-- ofert fisnish -->
+    </main>
+    
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer-content container">
+            <div class="link">
+                <h3>Nosotros</h3>
+                <ul>
+                    <li>Bienvenidos a cinnastore, somos una tienda la cual busca tener todos los productos de cinnamoroll los cuales son escasos en nuestro pais</li>
+                    <li>Ven y obten tu cinnamoroll en nuestra tienda</li>
+                </ul>
+            </div>
+
+            <div class="link">
+                <h3>Donde encontrarnos</h3>
+                <ul>
+                    <li><a href="#"><iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26610.325660111565!2d-70.63411876756592!3d-33.5198266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d060c1e0a161%3A0x9445253e2b20000!2sBellavista%20de%20la%20Florida!5e0!3m2!1ses!2scl!4v1715799910564!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></a></li>
+                </ul>
+            </div>
+
+            <div class="link">
+                <h3>Contactanos</h3>
+                <ul>
+                    <li><a href="#">cinnastore@gmail.com</a></li>
+                    <li><a href="#">@cinnastore</a></li>
+                    <li><a href="#">+56987654321</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- footer finish -->
+
+    
+    <script src="../script.js"></script>
+    <script src="../login.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
