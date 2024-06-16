@@ -1,31 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cinna store</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="img/navbar/logo-cinna.png">
+    <title>Cinna Store</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="icon" href="{% static 'img/navbar/logo-cinna.png' %}">
 </head>
 <body>
     <header class="header">
         <div class="menu container">
-            <a href="index.html" class="logo"><img src="img/navbar/logo-cinna.png" alt="logo"></a>
+            <a href="{% url "app:index" %}" class="logo"><img src="{% static 'img/navbar/logo-cinna.png' %}" alt="logo"></a>
             <input type="checkbox" id="menu" />
             <label for="menu">
-                <img src="img/navbar/nav-icon.png" class="menu-icon" alt="menu">
+                <img src="{% static 'img/navbar/nav-icon.png' %}" class="menu-icon" alt="menu">
             </label>
             <nav class="navbar">
                 <ul>
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="catalogo.html">catalogo</a></li>
-                    <li><button class="btnLogin-popup">login</button></li>
+                    <li><a href="{% url "app:index" %}">Inicio</a></li>
+                    <li><a href="{% url "app:catalog" %}">Catalogo</a></li>
+                    <li><button class="btnLogin-popup">Login</button></li>
                 </ul>
             </nav>
             <div>
                 <ul>
                     <li class="submenu">
-                        <img src="img/navbar/carrito-compras.png" id="img-carrito" alt="carrito">
+                        <img src="{% static 'img/navbar/carrito-compras.png' %}" id="img-carrito" alt="carrito">
                         <div id="carrito">
                             <table id="lista-carrito">
                                 <thead>
@@ -46,7 +47,7 @@
         </div>
         <div class="header-content container">
             <div class="header-img">
-                <img src="img/productos/product-1.png" alt="producto-popular">
+                <img src="{% static 'img/productos/product-1.png' %}" alt="producto-popular">
             </div>
             <div class="header-txt">
                 <h1>cinnamoroll</h1>
@@ -68,14 +69,14 @@
                 <!--input de mail-->
                 <div class="input-box" id="email-box-login">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" name="email-login" id="email-login" required>
+                    <input type="email" name="email-login" id="email-login" >
                     <label for="email-login">Correo electrónico</label>
                     <p id="warning-correo-login"></p>
                 </div>
                 <!--input de contraseña-->
                 <div class="input-box" id="password-box-login">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" name="password-login" id="password-login" required>
+                    <input type="password" name="password-login" id="password-login" >
                     <label for="password-login">Contraseña</label>
                     <p id="warning-password-login"></p>
                 </div>
@@ -145,7 +146,7 @@
     <section class="ofert container">
         <div class="ofert-1">
             <div class="ofert-img">
-                <img src="img/productos/product-1.png" alt="">
+                <img src="{% static 'img/productos/product-1.png' %}" alt="">
             </div>
             <div class="ofert-txt">
                 <h3>Peluche Cinnamoroll</h3>
@@ -156,7 +157,7 @@
 
         <div class="ofert-1">
             <div class="ofert-img">
-                <img src="img/productos/product-2.png" alt="">
+                <img src="{% static 'img/productos/product-2.png' %}" alt="">
             </div>
             <div class="ofert-txt">
                 <h3>Peluche Cinnamoroll</h3>
@@ -167,7 +168,7 @@
 
         <div class="ofert-1">
             <div class="ofert-img">
-                <img src="img/productos/product-3.png" alt="">
+                <img src="{% static 'img/productos/product-3.png' %}" alt="">
             </div>
             <div class="ofert-txt">
                 <h3>Peluche Cinnamoroll</h3>
@@ -182,7 +183,7 @@
         <h2>catalogo</h2>
         <div class="product-content">
             <div class="product" id="1">
-                <img src="img/productos/product-1.png" alt="imProducto">
+                <img src="{% static 'img/productos/product-1.png' %}" alt="imProducto">
                 <div class="product-txt">
                     <h3>Peluche Cinnamoroll</h3>
                     <p>Amor en tu peluche</p>
@@ -194,7 +195,7 @@
             </div>
             
             <div class="product" id="2">
-                <img src="img/productos/product-2.png" alt="imProducto">
+                <img src="{% static 'img/productos/product-2.png' %}" alt="imProducto">
                 <div class="product-txt">
                     <h3>Peluche Cinnamoroll</h3>
                     <p>Amor en tu peluche</p>
@@ -206,7 +207,7 @@
             </div>
 
             <div class="product" id="3">
-                <img src="img/productos/product-3.png" alt="imProducto">
+                <img src="{% static 'img/productos/product-3.png' %}" alt="imProducto">
                 <div class="product-txt">
                     <h3>Peluche Cinnamoroll</h3>
                     <p>Amor en tu peluche</p>
@@ -218,7 +219,7 @@
             </div>
 
             <div class="product" id="4">
-                <img src="img/productos/product-3.png" alt="imProducto">              
+                <img src="{% static 'img/productos/product-3.png' %}" alt="imProducto">              
                 <div class="product-txt">
                     <h3>Peluche Cinnamoroll</h3>
                     <p>Amor en tu peluche</p>
@@ -230,7 +231,7 @@
             </div>
 
             <div class="product" id="5">
-                <img src="img/productos/product-2.png" alt="imProducto">
+                <img src="{% static 'img/productos/product-2.png' %}" alt="imProducto">
                 <div class="product-txt">
                     <h3>Peluche Cinnamoroll</h3>
                     <p>Amor en tu peluche</p>
@@ -242,7 +243,7 @@
             </div>
 
             <div class="product" id="6">
-                <img src="img/productos/product-1.png" alt="imProducto">
+                <img src="{% static 'img/productos/product-1.png' %}" alt="imProducto">
                 <div class="product-txt">
                     <h3>Peluche Cinnamoroll</h3>
                     <p>Amor en tu peluche</p>
@@ -285,9 +286,9 @@
     </footer>
     <!-- footer finish -->
 
-    <script src="validaciones.js"></script>
-    <script src="script.js"></script>
-    <script src="login.js"></script>
+    <script src="{% static 'js/validaciones.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
