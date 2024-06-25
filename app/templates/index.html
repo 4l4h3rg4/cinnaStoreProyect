@@ -65,19 +65,19 @@
         <div class="form-box login">
             <!--titulo-->
             <h2>Login</h2>
-            <form action="#" id="inicio-sesion">
+            <form action="" id="inicio-sesion" method="POST">
                 {% csrf_token %}
                 <!--input de mail-->
                 <div class="input-box" id="email-box-login">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" name="email-login" id="email-login" >
+                    <input type="email" name="username" id="email-login" >
                     <label for="email-login">Correo electrónico</label>
                     <p id="warning-correo-login"></p>
                 </div>
                 <!--input de contraseña-->
                 <div class="input-box" id="password-box-login">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" name="password-login" id="password-login" >
+                    <input type="password" name="password" id="password-login" >
                     <label for="password-login">Contraseña</label>
                     <p id="warning-password-login"></p>
                 </div>
@@ -98,7 +98,7 @@
         <div class="form-box register">
             <!-- titulo -->
             <h2>Registrarse</h2>
-            <form action="#" id="registro">
+            <form action="" id="registro">
                 {% csrf_token %}
                 <!--  user -->
                 <div class="input-box" id="user-box-register">
