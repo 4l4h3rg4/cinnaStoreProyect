@@ -22,7 +22,7 @@ const passwordBoxLogin = document.getElementById('password-box-login')
 
 /* validaciones login */
 login.addEventListener('submit', e => {
-    e.preventDefault()
+    console.log('login submit')
     if (emailLogin.value.trim() === '' || passwordLogin.value.trim() === '') {
         warningEmailLogin.textContent = 'Por favor, rellene todos los campos';
         warningPasswordLogin.textContent = 'Por favor, rellene todos los campos';
@@ -56,7 +56,7 @@ login.addEventListener('submit', e => {
 
 /* validaciones de register */
 register.addEventListener('submit', e => {
-    e.preventDefault();
+    console.log('register submit')
     if (userRegister.value.trim() === '' || emailRegister.value.trim() === '' || passwordRegister.value.trim() === '') {
         warningUserRegister.textContent = 'Por favor, rellene todos los campos';
         warningEmailRegister.textContent = 'Por favor, rellene todos los campos';
