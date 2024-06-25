@@ -1,5 +1,7 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
+from django.urls import reverse
 
 def index(request):
     if request.method == 'POST':
@@ -17,3 +19,8 @@ def index(request):
 
 def catalog(request):
     return render(request, 'catalog.html')
+
+def logout_view(request):
+    print("logout_view")
+    logout(request)
+    return HttpResponseRedirect(reverse('app:index'))
