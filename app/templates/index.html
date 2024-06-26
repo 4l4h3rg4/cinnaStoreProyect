@@ -108,23 +108,12 @@
             <h2>Registrarse</h2>
             <form action="" id="registro" method="POST">
                 {% csrf_token %}
-                <!--  user -->
-                <div class="input-box" id="user-box-register">
-                    <!-- icon user -->
-                    <span class="icon">
-                        <ion-icon name="person-circle"></ion-icon>
-                    </span>
-                    <!-- input user -->
-                    <input type="text" name="username" id="txt-register" required>
-                    <label for="txt-register">Usuario</label>
-                    <p id="warning-user-register"></p>
-                </div>
                 <!-- correo -->
                 <div class="input-box" id="email-box-register">
                     <!-- icon -->
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <!-- input correo -->
-                    <input type="email" name="email-register" id="email-register" required>
+                    <input type="email" name="username" id="email-register" required>
                     <label for="email-register">Correo</label>
                     <p id="warning-correo-register"></p>
                 </div>
