@@ -21,14 +21,20 @@
                     <li><a href="{% url "app:index" %}">Inicio</a></li>
                     <li><a href="{% url "app:catalog" %}">Catalogo</a></li>
                     <li><button class="btnLogin-popup">Login</button></li>
+                    <li><a href="{% url 'app:logout_view' %}">Cerrar sesión</a></li>
                 </ul>
             </nav>
             <div>
                 <ul>
                     <li class="submenu">
-                        <span>{% if user.is_authenticated %}Esta logeado - {{ user.username }}{% else %}No esta logeado{% endif %}</span>
+                        <span>
+                            {% if user.is_authenticated %}
+                                Esta logeado - {{ user.username }} ({% if user.is_staff %}ADMIN{% else %}CLIENTE{% endif%})
+                            {% else %}
+                                No esta logeado
+                            {% endif %}
+                        </span>
                         <img src="{% static 'img/navbar/carrito-compras.png' %}" id="img-carrito" alt="carrito">
-                        <a href="{% url 'app:logout_view' %}">Cerrar sesión</a>
                         <div id="carrito">
                             <table id="lista-carrito">
                                 <thead>
@@ -100,7 +106,7 @@
         <div class="form-box register">
             <!-- titulo -->
             <h2>Registrarse</h2>
-            <form action="" id="registro">
+            <form action="" id="registro" method="POST">
                 {% csrf_token %}
                 <!--  user -->
                 <div class="input-box" id="user-box-register">
@@ -109,7 +115,7 @@
                         <ion-icon name="person-circle"></ion-icon>
                     </span>
                     <!-- input user -->
-                    <input type="text" name="txt-register" id="txt-register" required>
+                    <input type="text" name="username" id="txt-register" required>
                     <label for="txt-register">Usuario</label>
                     <p id="warning-user-register"></p>
                 </div>

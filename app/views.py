@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 
 def index(request):
@@ -13,6 +13,8 @@ def index(request):
         print('password:', password)
         user = authenticate(request, username=username, password=password)
         print('user:', user)
+        if user is not None:
+            login(request, user)
     else:
         print("get")
     return render(request, 'index.html')
